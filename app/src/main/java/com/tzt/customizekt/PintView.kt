@@ -9,7 +9,7 @@ import android.util.AttributeSet
 import android.view.View
 
 /*
-
+ *
  */
 class PintView : View {
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
