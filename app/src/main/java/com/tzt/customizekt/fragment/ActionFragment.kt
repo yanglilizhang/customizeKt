@@ -12,6 +12,7 @@ import com.tzt.common.basedepency.CustomModel
 import com.tzt.customize.action.ui.HeartXfermodeActivity
 import com.tzt.customize.action.ui.ScrapingCardXfermodeActivity
 import com.tzt.customizekt.R
+import com.tzt.customizekt.study.page.PageActivity
 import kotlinx.android.synthetic.main.fragment_customize.*
 
 
@@ -21,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_customize.*
  * @author tangzhentao
  * @since 2020/5/14
  */
-class ActionFragment: BaseFragment() {
+class ActionFragment : BaseFragment() {
     private val uiList = ArrayList<CustomModel>()
 
     override fun layoutResID(): Int {
@@ -30,6 +31,7 @@ class ActionFragment: BaseFragment() {
 
     override fun initData() {
         uiList.apply {
+            add(CustomModel("我的自定义", "xfermode", PageActivity::class.java))
             add(CustomModel("刮刮卡", "xfermode", ScrapingCardXfermodeActivity::class.java))
             add(CustomModel("心跳", "xfermode", HeartXfermodeActivity::class.java))
         }
@@ -40,12 +42,16 @@ class ActionFragment: BaseFragment() {
         recyclerCustomize.adapter = UIAdapter()
     }
 
-    inner class UIAdapter: RecyclerView.Adapter<UIViewHolder>() {
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= UIViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.recycler_item_custom_view, parent, false)
+    inner class UIAdapter : RecyclerView.Adapter<UIViewHolder>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = UIViewHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.recycler_item_custom_view,
+                parent,
+                false
+            )
         )
 
-        override fun getItemCount()= uiList.size
+        override fun getItemCount() = uiList.size
 
         override fun onBindViewHolder(holder: UIViewHolder, position: Int) {
             val model = uiList[position]
@@ -59,7 +65,7 @@ class ActionFragment: BaseFragment() {
 
     }
 
-    inner class UIViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class UIViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.tvTitle)
         val subTitle: TextView = itemView.findViewById(R.id.tvSubTitle)
     }

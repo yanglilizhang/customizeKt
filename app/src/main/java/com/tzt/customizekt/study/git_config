@@ -1,0 +1,5 @@
+1.首先要确认是否建立了主项目的远程源：git remote -v
+2.则说明没有建立远程的repo源。需要添加主repo的源：git remote add upstream URL
+3.添加完之后再次使用git remote -v 来确认。
+4.拉取主repo源代码： git fetch upstream
+5.合并主repo代码到本地代码： git merge upstream/master
