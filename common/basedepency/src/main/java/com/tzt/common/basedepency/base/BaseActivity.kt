@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.widget.FrameLayout
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.tzt.common.basedepency.ActivityController
@@ -24,8 +23,6 @@ import kotlinx.android.synthetic.main.content.*
  */
 abstract class BaseActivity: AppCompatActivity() {
     lateinit var context: Context
-
-    protected abstract var layoutResID: Int
 
     /**
      * 整个页面, 内容页面, 错误页面，空数据页面，数据页面，标题栏
@@ -47,7 +44,7 @@ abstract class BaseActivity: AppCompatActivity() {
         if (getStatusBarColorSameAsTooBarColor()) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 //设置状态栏颜色
-                val color = toobarParams?.bgColor ?: Color.parseColor("#1E90FF")
+                val color = toobarParams?.backgroundColor ?: Color.parseColor("#1E90FF")
 
                 window.statusBarColor = color
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -60,8 +57,8 @@ abstract class BaseActivity: AppCompatActivity() {
 
         if (toobarParams != null) {
             toobar = Toobar(context)
-            toobar.setBackgroundColor(toobarParams.bgColor)
-            val params = LinearLayout.LayoutParams(-1, toobarParams.titleHeight)
+            toobar.setBackgroundColor(toobarParams.backgroundColor)
+            val params = LinearLayout.LayoutParams(-1, toobarParams.toobarHeight)
             allLayout.addView(toobar, params)
         }
 
@@ -72,7 +69,10 @@ abstract class BaseActivity: AppCompatActivity() {
 
         setContentView(allLayout)
 
-        dataLayout.addView(View.inflate(context, layoutResID, null), FrameLayout.LayoutParams(-1, -1))
+        if (layoutResID() > 0) {
+            viewStub.layoutResource = layoutResID()
+            viewStub.inflate()
+        }
 
         initData()
         bindListener()
@@ -88,7 +88,7 @@ abstract class BaseActivity: AppCompatActivity() {
      */
     private fun updateTitleBar() {
         val  toobarParams = getToobarParams() ?: return
-        toobar.mHeight = toobarParams.titleHeight
+        toobar.mHeight = toobarParams.toobarHeight
         toobar.setTitle(toobarParams.title)
         toobar.addLeftAction(toobarParams.leftActions)
         toobar.addRightAction(toobarParams.rightActions)
@@ -104,6 +104,12 @@ abstract class BaseActivity: AppCompatActivity() {
      * @return 默认一致，可以重写返回false展示不一致
      */
     open fun getStatusBarColorSameAsTooBarColor(): Boolean { return true }
+
+    /**
+     * 内容布局
+     * return 布局id Int
+     */
+    protected abstract fun layoutResID(): Int
 
     open fun initData() {}
 
@@ -133,7 +139,7 @@ abstract class BaseActivity: AppCompatActivity() {
     }
 
     /**
-     * 返回返回箭头
+     * 返回箭头
      * return Toobar.TooBarAction
      */
     fun createFinisIcon(): Toobar.TooBarAction {
@@ -142,6 +148,20 @@ abstract class BaseActivity: AppCompatActivity() {
 
             override fun click(view: View) {
                 finish()
+            }
+        }
+    }
+
+    /**
+     * 源码图片
+     * return Toobar.TooBarAction
+     */
+    fun createCodeIcon(clickListener: (view: View) -> Unit): Toobar.TooBarAction {
+        return object :Toobar.TooBarAction() {
+            override fun getImageResource() = R.mipmap.code
+
+            override fun click(view: View) {
+                clickListener(view)
             }
         }
     }
