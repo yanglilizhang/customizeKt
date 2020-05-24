@@ -62,6 +62,7 @@ public class LogoLoadingView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         rectF.top = currentTop;
+
         /**
          * 设置View的离屏缓冲。在绘图的时候新建一个“层”，所有的操作都在该层而不会影响该层以外的图像
          * 必须设置，否则设置的PorterDuffXfermode会无效，具体原因不明

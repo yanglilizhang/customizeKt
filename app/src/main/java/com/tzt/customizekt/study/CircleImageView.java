@@ -50,7 +50,17 @@ public class CircleImageView extends View {
 
     {
         bitmap = getAvatar((int) WIDTH);
+//        setLayerType(LAYER_TYPE_SOFTWARE,null);//对某个view关闭硬件加速 全局使用的
     }
+
+    //软件绘制就是绘制到bitmap上面，硬件绘制就是用GPU绘制(也就是硬件加速)
+//        setLayerType(LAYER_TYPE_SOFTWARE,null);//对某个view关闭硬件加速 全局使用的
+//        setLayerType(LAYER_TYPE_HARDWARE,null);
+//        setLayerType(LAYER_TYPE_NONE,null);//开启硬件加速
+    //离屏缓冲就是单独拿出来一块区域绘制
+    //使用离屏缓冲
+    // 1.setLayerType()
+    // 2.saveLayer()
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
