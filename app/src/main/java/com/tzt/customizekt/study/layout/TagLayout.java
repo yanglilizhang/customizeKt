@@ -150,4 +150,23 @@ public class TagLayout extends ViewGroup {
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new MarginLayoutParams(getContext(), attrs);
     }
+
+    /**
+     * 重写 generateDefaultLayoutParams才能获取控件的margin值
+     * 重写 generateLayoutParams 获取margin的相关参数
+     * 所以，需要重写这两个函数，才能实现 子控件的 margin
+     */
+    /*override fun generateLayoutParams(p: LayoutParams?): LayoutParams {
+        return MarginLayoutParams(p)
+
+    }
+
+    override fun generateLayoutParams(attrs: AttributeSet?): LayoutParams {
+        return MarginLayoutParams(context, attrs)
+    }
+
+    override fun generateDefaultLayoutParams(): LayoutParams {
+        return MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+    }*/
+
 }
