@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 /**
  * 测量工具
  * https://github.com/Mosect
+ * https://github.com/Mosect/AShadow 见ShadowLayout
  */
 public final class MeasureUtils {
 

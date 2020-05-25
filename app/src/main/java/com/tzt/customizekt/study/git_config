@@ -3,3 +3,19 @@
 3.添加完之后再次使用git remote -v 来确认。
 4.拉取主repo源代码： git fetch upstream
 5.合并主repo代码到本地代码： git merge upstream/master
+
+https://github.com/kgbky/CustomViewDemo
+
+https://github.com/yangkun19921001/CustomViewSample
+https://github.com/LuckyCode1992/ViewUtils
+https://github.com/xing16/ProgressAndroid
+https://github.com/zincPower/UI2018
+https://github.com/vicedev/VCustomViews
+https://github.com/afkT/DevUtils/tree/master/lib/Widget/DevWidget
+https://github.com/uni7corn/Widget
+
+https://github.com/zhoulinda/ComponentDemo
+https://github.com/Cheney2006/ComponentSample
+https://github.com/masterxing/XCloudMusic
+
+https://github.com/sucese/android-open-source-project-analysis

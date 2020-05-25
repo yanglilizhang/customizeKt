@@ -33,6 +33,11 @@ class PintView : View {
 
     }
 
+//    draw()：super.draw()之前，被背景盖住；super.draw()后，盖住前景；
+//    onDraw()：super.onDraw()之前，背景与主体内容之前；super.onDraw()之后，主体内容和子View之间；
+//    dispatchDraw()：super.dispatchDraw()之前，主体内容和子View之间；super.dispatchDraw()之后，子View和前景之间；
+//    onDrawForeground()：super.onDrawForeground()之前，子View和前景之间；super.onDrawForeground()之后，盖住前景；
+
     @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
@@ -228,4 +233,24 @@ class PintView : View {
 //        canvas.drawBitmap(bitmap1,50,50,null);
 //    }
 
+    /**
+    private static final Xfermode[] sModes = {
+    new PorterDuffXfermode(PorterDuff.Mode.CLEAR),      // 清空所有，要闭硬件加速，否则无效
+    new PorterDuffXfermode(PorterDuff.Mode.SRC),        // 显示前都图像，不显示后者
+    new PorterDuffXfermode(PorterDuff.Mode.DST),        // 显示后者图像，不显示前者
+    new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER),   // 后者叠于前者
+    new PorterDuffXfermode(PorterDuff.Mode.DST_OVER),   // 前者叠于后者
+    new PorterDuffXfermode(PorterDuff.Mode.SRC_IN),     // 显示相交的区域，但图像为后者
+    new PorterDuffXfermode(PorterDuff.Mode.DST_IN),     // 显示相交的区域，但图像为前者
+    new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT),    // 显示后者不重叠的图像
+    new PorterDuffXfermode(PorterDuff.Mode.DST_OUT),    // 显示前者不重叠的图像
+    new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP),   // 显示前者图像，与后者重合的图像
+    new PorterDuffXfermode(PorterDuff.Mode.DST_ATOP),   // 显示后者图像，与前者重合的图像
+    new PorterDuffXfermode(PorterDuff.Mode.XOR),        // 显示持有不重合的图像
+    new PorterDuffXfermode(PorterDuff.Mode.DARKEN),     // 后者叠于前者上，后者与前者重叠的部份透明。要闭硬件加速，否则无效
+    new PorterDuffXfermode(PorterDuff.Mode.LIGHTEN),    // 前者叠于前者，前者与后者重叠部份透明。要闭硬件加速，否则无效
+    new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY),   // 显示重合的图像，且颜色会合拼
+    new PorterDuffXfermode(PorterDuff.Mode.SCREEN)    // 显示持有图像，重合的会变白
+    };
+     */
 }

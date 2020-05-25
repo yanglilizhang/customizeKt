@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.animation.TypeEvaluator
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Point
 import android.util.Property
 import android.widget.TextView
@@ -29,6 +30,7 @@ class PageActivity : BaseActivity() {
 
     override fun initData() {
         super.initData()
+        startActivity(Intent(this, MiSportsActivity::class.java))
     }
 
     internal class PointEvaluator1 :

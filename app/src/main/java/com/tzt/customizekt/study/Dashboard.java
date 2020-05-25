@@ -73,6 +73,7 @@ public class Dashboard extends View {
                 paint);
     }
 
+    //计算角度
     int getAngleFromMark(int mark) {
         return (int) (90 + (float) angle / 2 + (360 - (float) angle) / 20 * mark);
     }
