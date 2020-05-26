@@ -30,7 +30,7 @@ class PageActivity : BaseActivity() {
 
     override fun initData() {
         super.initData()
-        startActivity(Intent(this, MiSportsActivity::class.java))
+//        startActivity(Intent(this, MiSportsActivity::class.java))
     }
 
     internal class PointEvaluator1 :
@@ -88,7 +88,4 @@ class PageActivity : BaseActivity() {
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-    }
 }
