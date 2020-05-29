@@ -9,15 +9,16 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
 import android.view.animation.LinearInterpolator
+import com.tzt.customizekt.study.base.BaseView2
 import com.tzt.customizekt.study.utils.BaseView
 
 
-class QuadToView2 : BaseView {
+class QuadToView2 : BaseView2 {
 
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         strokeWidth = 2f
         style = Paint.Style.STROKE
-        color = Color.RED
+        color = Color.BLUE
     }
 
     //波浪宽
@@ -38,7 +39,9 @@ class QuadToView2 : BaseView {
         defStyleAttr
     )
 
-    override fun init(context: Context?) {
+    override fun init(context: Context?, attrs: AttributeSet?) {
+        super.init(context, attrs)
+
         mBezierPath = Path()
         mAnimator = ValueAnimator.ofInt(0, mItemWidth)
         mAnimator?.addUpdateListener(AnimatorUpdateListener { animation ->
@@ -48,15 +51,15 @@ class QuadToView2 : BaseView {
 
         mAnimator?.interpolator = LinearInterpolator()
 
-        mAnimator?.duration = 1000
+        mAnimator?.duration = 2000
         mAnimator?.repeatCount = -1
         mAnimator?.start()
     }
 
-    override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
-        drawCoordinate(canvas)
 
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+//        drawCoordinate(canvas)
 //        canvas.translate(mWidth / 2, mHeight / 2)
 
         //水波纹
@@ -74,33 +77,50 @@ class QuadToView2 : BaseView {
         //同理第二段曲线终点的坐标是(500+400, 500-200)
         mBezierPath?.rQuadTo(200f, 300f, 400f, -200f)
          */
-//        for(int i=0; i<mItemWidth + getWidth(); i+=mItemWidth){
-        mBezierPath?.reset()
-        val halfItem = mItemWidth / 2
-        mBezierPath?.moveTo(0f, 200f)
 
-        var i = 0
-        while (i < mItemWidth + width) {
-            //表示右移半个波浪， 并且上移100，即一个浪的最高点
+        mBezierPath?.reset()
+        val halfItem = mItemWidth / 2 //200
+//        mBezierPath?.moveTo(0f, 200f)
+
+        //水波纹
+        //表示右移半个波浪， 并且上移100，即一个浪的最高点
+//        mBezierPath?.rQuadTo((halfItem / 2).toFloat(), -100f, halfItem.toFloat(), 0f)
+//        //再右移半个波浪，并且下移100，即一个浪的最低点，
+//        mBezierPath?.rQuadTo((halfItem / 2).toFloat(), 100f, halfItem.toFloat(), 0f)
+
+        //全波浪
+//        mBezierPath?.moveTo(0f, 400f)
+//        canvas?.drawLine(0f,400f,600f,400f,paint)
+//        var i = 0
+        //        for(int i=0; i<mItemWidth + getWidth(); i+=mItemWidth){
+//        while (i < mItemWidth + width) {
+//            mBezierPath?.rQuadTo((halfItem / 2).toFloat(), -100f, halfItem.toFloat(), 0f)
+//            mBezierPath?.rQuadTo((halfItem / 2).toFloat(), 100f, halfItem.toFloat(), 0f)
+//            i += mItemWidth
+//        }
+
+
+        var j = 0
+        val x0 = -mItemWidth + mOffsetX
+        val y0 = halfItem
+        //必须先减去一个浪的宽度，以便第一遍动画能够刚好位移出一个波浪，形成无限波浪的效果
+        mBezierPath?.moveTo(x0.toFloat(), y0.toFloat())
+        while (j < mItemWidth + width) {
             mBezierPath?.rQuadTo((halfItem / 2).toFloat(), -100f, halfItem.toFloat(), 0f)
-            //再右移半个波浪，并且下移100，即一个浪的最低点，
             mBezierPath?.rQuadTo((halfItem / 2).toFloat(), 100f, halfItem.toFloat(), 0f)
-            i += mItemWidth
+            j += mItemWidth
         }
 
 
-
-
-
         mBezierPath?.let {
-            paint.color = Color.RED
+            paint.color = Color.BLUE
 
             //闭合路径波浪以下区域
             mBezierPath?.lineTo(width.toFloat(), height.toFloat());
             mBezierPath?.lineTo(0f, height.toFloat());
             mBezierPath?.close()
 
-            canvas.drawPath(it, paint)
+            canvas?.drawPath(it, paint)
         }
 
     }

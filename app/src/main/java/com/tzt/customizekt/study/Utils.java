@@ -1,9 +1,14 @@
 package com.tzt.customizekt.study;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.tzt.customizekt.R;
 
@@ -31,4 +36,32 @@ public class Utils {
         return - 6 * Resources.getSystem().getDisplayMetrics().density;
     }
 
+
+    /**
+     * 获得屏幕高度
+     *
+     * @param ctx 上下文
+     * @param winSize 屏幕尺寸
+     */
+    public static void loadWinSize(Context ctx, Point winSize) {
+        WindowManager wm = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        if (wm != null) {
+            wm.getDefaultDisplay().getMetrics(outMetrics);
+        }
+        winSize.x = outMetrics.widthPixels;
+        winSize.y = outMetrics.heightPixels;
+    }
+
+    /**
+     * 设置全屏
+     * @param window
+     */
+    public static void  setActivityFullScreen(Window window) {
+        window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+        );
+
+    }
 }

@@ -118,7 +118,7 @@ class ShipBezierView: CoordinateView {
         isClose: Boolean,
         lengthTime: Float
     ) {
-        // 初始化 小船的路径
+        // 初始化 小船的路径  length浪花的宽度
         path.moveTo((-length).toFloat(), (mHeight / 2).toFloat())
         var i = -length
         while (i < mWidth * lengthTime + length) {

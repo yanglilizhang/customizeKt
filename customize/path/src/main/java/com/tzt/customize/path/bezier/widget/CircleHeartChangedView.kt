@@ -16,7 +16,7 @@ import kotlin.math.sin
  * @author tangzhentao
  * @since 2020/4/26
  */
-class CircleHeartChangedView:
+class CircleHeartChangedView :
     CoordinateView {
     private lateinit var paint: Paint
     private lateinit var path: Path
@@ -30,11 +30,15 @@ class CircleHeartChangedView:
     private val circleList = ArrayList<PointF>()
     private val curList = ArrayList<PointF>()
 
-    constructor(context: Context): this(context, null)
+    constructor(context: Context) : this(context, null)
 
-    constructor(context: Context, attributeSet: AttributeSet?): this(context, attributeSet, 0)
+    constructor(context: Context, attributeSet: AttributeSet?) : this(context, attributeSet, 0)
 
-    constructor(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int): super(context, attributeSet, defStyleAttr) {
+    constructor(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attributeSet,
+        defStyleAttr
+    ) {
         initAll()
     }
 
@@ -45,7 +49,7 @@ class CircleHeartChangedView:
         }
 
         path = Path()
-
+        //心坐标
         heartList.apply {
             add(PointF(0f, dpToPx(-38)))
             add(PointF(dpToPx(50), dpToPx(-103)))
@@ -98,7 +102,7 @@ class CircleHeartChangedView:
                 val factor = 0.15f
                 val value = 2.0.pow(-10.0 * x) * sin((x - factor / 4) * (2 * Math.PI) / factor) + 1
 
-                for(i in 0 until curList.size) {
+                for (i in 0 until curList.size) {
                     val startPointF = circleList[i]
                     val endPointF = heartList[i]
 
@@ -122,7 +126,7 @@ class CircleHeartChangedView:
         canvas?.translate(halfW, halfH)
 
         path.reset()
-        for(i in 0 until 4) {
+        for (i in 0 until 4) {
             if (i == 0) {
                 path.moveTo(curList[i * 3].x, curList[i * 3].y)
             } else {
@@ -131,13 +135,15 @@ class CircleHeartChangedView:
 
             val endIndex = if (i == 3) {
                 0
-            }else {
+            } else {
                 i * 3 + 3
             }
 
-            path.cubicTo(curList[i * 3 + 1].x, curList[i * 3 + 1].y,
+            path.cubicTo(
+                curList[i * 3 + 1].x, curList[i * 3 + 1].y,
                 curList[i * 3 + 2].x, curList[i * 3 + 2].y,
-                curList[endIndex].x, curList[endIndex].y)
+                curList[endIndex].x, curList[endIndex].y
+            )
         }
 
         canvas?.drawPath(path, paint)
