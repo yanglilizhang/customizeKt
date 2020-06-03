@@ -35,7 +35,7 @@ public class FlowLayout extends ViewGroup {
         super.generateLayoutParams(p);
         return new MarginLayoutParams(p);
     }
-
+// 重写该方法,子View 才可以使用 margin属性
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new MarginLayoutParams(getContext(), attrs);

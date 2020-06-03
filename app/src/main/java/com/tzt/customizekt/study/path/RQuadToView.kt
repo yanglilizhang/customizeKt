@@ -8,9 +8,8 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
-import android.view.MotionEvent
 import android.view.animation.LinearInterpolator
-import com.tzt.customizekt.study.utils.BaseView
+import com.tzt.customizekt.study.base.BaseView
 
 class RQuadToView : BaseView {
     val path = Path()

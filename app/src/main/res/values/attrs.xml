@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MyView">
+
+        <attr name="brand_text" format="string" />
+        <attr name="brand_text_size" format="dimension" />
+        <attr name="brand_text_color" format="color" />
+        <attr name="hour_hand_color" format="color" />
+        <attr name="minute_hand_color" format="color" />
+        <attr name="second_hand_color" format="color" />
+
+    </declare-styleable>
+
+
+    <declare-styleable name="ToggleButtonPlusMax">
+        <attr name="toggle"  format="string" />
+    </declare-styleable>
+
+</resources>

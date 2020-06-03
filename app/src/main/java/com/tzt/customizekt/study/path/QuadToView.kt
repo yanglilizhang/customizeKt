@@ -7,7 +7,7 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
 import android.view.MotionEvent
-import com.tzt.customizekt.study.utils.BaseView
+import com.tzt.customizekt.study.base.BaseView
 
 class QuadToView: BaseView {
     val path = Path()

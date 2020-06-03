@@ -12,15 +12,12 @@ import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.View;
 import android.view.animation.LinearInterpolator;
-import android.view.animation.OvershootInterpolator;
 
 import androidx.annotation.Nullable;
 
 import com.tzt.customizekt.R;
-import com.tzt.customizekt.study.utils.BaseView;
-
+import com.tzt.customizekt.study.base.BaseView;
 /**
  * @author Jiang zinc
  * @date 创建时间：2018/11/5

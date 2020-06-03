@@ -10,7 +10,6 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.animation.LinearInterpolator
 import com.tzt.customizekt.study.base.BaseView2
-import com.tzt.customizekt.study.utils.BaseView
 
 
 class QuadToView2 : BaseView2 {
