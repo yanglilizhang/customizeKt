@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.core.view.GestureDetectorCompat;
 
 import com.tzt.customizekt.R;
-
+//
 public class ToggleButtonPlusMax extends View {
 
     /**
