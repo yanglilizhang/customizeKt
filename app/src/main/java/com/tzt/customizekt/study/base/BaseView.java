@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 /**
  * @author Jiang zinc
  * @date 创建时间：2018/12/6
- * @description
+ * @description 中心坐标点
  */
 public abstract class BaseView extends View {
 

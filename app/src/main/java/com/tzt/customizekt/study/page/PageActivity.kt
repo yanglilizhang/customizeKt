@@ -22,10 +22,11 @@ class PageActivity : BaseActivity() {
     }
 
     override fun getToobarParams(): ToobarParams? {
-        return ToobarParams(
-            createFinisIcon(),
-            title = "我的自定义"
-        )
+//        return ToobarParams(
+//            createFinisIcon(),
+//            title = "我的自定义"
+//        )
+        return null
     }
 
     override fun initData() {

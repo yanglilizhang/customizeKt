@@ -1,4 +1,4 @@
-package com.tzt.customizekt.study.path;
+package com.tzt.customizekt.study.path.path_measure;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -110,7 +110,7 @@ public class PlaneLoadingView extends BaseView {
                 invalidate();
             }
         });
-//        startLoading();
+        startLoading();
     }
 
     //用于获取关联的Path上距离起始点长度（ 即传入的distance，范围0<=distance<=getLength() ）的点的坐标和正切值（两者可选，由flags决定）
