@@ -29,9 +29,9 @@ public class ColoredTextView extends androidx.appcompat.widget.AppCompatTextView
             16, 22, 28
     };
     private static final Random random = new Random();
-    private static final int CORNER_RADIUS = (int) Utils.dpToPixel(4);
-    private static final int X_PADDING = (int) Utils.dpToPixel(16);
-    private static final int Y_PADDING = (int) Utils.dpToPixel(8);
+    private static final int CORNER_RADIUS = (int) Utils.dp2px(4);
+    private static final int X_PADDING = (int) Utils.dp2px(16);
+    private static final int Y_PADDING = (int) Utils.dp2px(8);
 
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 

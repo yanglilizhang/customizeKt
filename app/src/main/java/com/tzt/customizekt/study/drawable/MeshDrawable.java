@@ -17,7 +17,7 @@ import com.tzt.customizekt.study.Utils;
  * 注意区域是：getBounds()
  */
 public class MeshDrawable extends Drawable {
-    private static final int INTERVAL = (int) Utils.dpToPixel(80);
+    private static final int INTERVAL = (int) Utils.dp2px(80);
 
 //    MeshDrawable rawable = new MeshDrawable();
 //    drawable.setBounds(100, 100, getWidth(), getHeight());
@@ -28,7 +28,7 @@ public class MeshDrawable extends Drawable {
 
     {
         paint.setColor(Color.RED);
-        paint.setStrokeWidth(Utils.dpToPixel(2));
+        paint.setStrokeWidth(Utils.dp2px(2));
     }
 
     @Override

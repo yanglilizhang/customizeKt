@@ -15,8 +15,8 @@ import com.tzt.customizekt.study.Utils;
  *
  */
 public class CircleView extends View {
-    private static final int RADIUS = (int) Utils.dpToPixel(80);
-    private static final int PADDING = (int) Utils.dpToPixel(30);
+    private static final int RADIUS = (int) Utils.dp2px(80);
+    private static final int PADDING = (int) Utils.dp2px(30);
 
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 

@@ -32,7 +32,7 @@ public class ProvinceView extends View {
 //        setLayerType(LAYER_TYPE_SOFTWARE, null);
         setLayerType(LAYER_TYPE_HARDWARE, null);
 //        setLayerType(LAYER_TYPE_NONE, null);
-        paint.setTextSize(Utils.dpToPixel(60));
+        paint.setTextSize(Utils.dp2px(60));
         paint.setTextAlign(Paint.Align.CENTER);
     }
 

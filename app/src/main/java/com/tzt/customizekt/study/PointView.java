@@ -19,7 +19,7 @@ public class PointView extends View {
     }
 
     {
-        paint.setStrokeWidth(Utils.dpToPixel(15));
+        paint.setStrokeWidth(Utils.dp2px(15));
         paint.setStrokeCap(Paint.Cap.ROUND);
     }
 
