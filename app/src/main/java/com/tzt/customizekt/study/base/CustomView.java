@@ -10,6 +10,9 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+/**
+ *
+ */
 public class CustomView extends View {
     public CustomView(Context context) {
         super(context);
