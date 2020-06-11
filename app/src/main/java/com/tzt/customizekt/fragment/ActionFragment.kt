@@ -13,6 +13,7 @@ import com.tzt.customize.action.ui.HeartXfermodeActivity
 import com.tzt.customize.action.ui.ScrapingCardXfermodeActivity
 import com.tzt.customizekt.R
 import com.tzt.customizekt.study.page.PageActivity
+import com.tzt.customizekt.study.page.WaveViewActivity
 import kotlinx.android.synthetic.main.fragment_customize.*
 
 
@@ -34,6 +35,7 @@ class ActionFragment : BaseFragment() {
             add(CustomModel("我的自定义", "xfermode", PageActivity::class.java))
             add(CustomModel("刮刮卡", "xfermode", ScrapingCardXfermodeActivity::class.java))
             add(CustomModel("心跳", "xfermode", HeartXfermodeActivity::class.java))
+            add(CustomModel("WaveView", "xfermode", WaveViewActivity::class.java))
         }
 
         recyclerCustomize.layoutManager = LinearLayoutManager(context).apply {

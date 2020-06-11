@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".study.page.MiSportsActivity"></activity>
+        <activity android:name=".study.page.WaveViewActivity"></activity>
+        <activity android:name=".study.page.MiSportsActivity" />
         <activity android:name=".study.page.PageActivity" />
         <activity
             android:name=".MainActivity"

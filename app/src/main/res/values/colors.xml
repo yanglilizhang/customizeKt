@@ -18,4 +18,8 @@
 
     <color name="canvas_highlight_blue_color">#defcfc</color>
 
+    <color name="red">#f16d7a</color>
+    <color name="green">#b7d28d</color>
+    <color name="blue">#b8f1ed</color>
+
 </resources>
