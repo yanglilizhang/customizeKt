@@ -5,6 +5,7 @@
 4.拉取主repo源代码： git fetch upstream
 5.合并主repo代码到本地代码： git merge upstream/master
 https://github.com/Chen-Al/CustomViews
+https://github.com/liys666666/LProgressView
 
 https://github.com/onebee/Netease_UI
 https://github.com/yangkun19921001/CustomViewSample

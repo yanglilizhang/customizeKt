@@ -29,81 +29,81 @@ class FlowLayout2 : ViewGroup{
 
     constructor(context: Context,attrs: AttributeSet?,defStyleAttr: Int): super(context,attrs,defStyleAttr)
 
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-
-        mAllViews.clear()
-        mLineViews.clear()
-        mLineHeight.clear()
-
-        val widthMode = MeasureSpec.getMode(widthMeasureSpec)
-        val heightMode = MeasureSpec.getMode(heightMeasureSpec)
-        val measureWidth = MeasureSpec.getSize(widthMeasureSpec)-paddingLeft-paddingRight
-        val measureHeight = MeasureSpec.getSize(heightMeasureSpec)-paddingTop-paddingBottom
-
-        //布局的真实尺寸
-        var realWidth = 0
-        var realHeight = 0
-
-        //每行的可用宽度，默认等于测量宽度
-        var remainWidth = measureWidth
-
-        //已经使用的尺寸
-        var tempWidth = 0
-        var tempHeight = 0
-
-        forEachIndexed { index, view ->
-            val childParams:MarginLayoutParams = view.layoutParams as MarginLayoutParams
-            measureChildWithMargins(view,widthMeasureSpec,0,heightMeasureSpec,0)
-            val childWidth = view.measuredWidth+childParams.leftMargin+childParams.rightMargin
-            val childHeight = view.measuredHeight+childParams.topMargin+childParams.bottomMargin
-
-            remainWidth -= (childWidth+hPadding)
-            //如果可用宽度<=0，说明这一行剩余空间不够放置此view，需要另起一行
-            if (remainWidth<=0){
-                //重置每行的可用宽度
-                remainWidth = measureWidth-childWidth-hPadding
-
-                //换行啦,换行之后，需要保存上一行的view和高度到集合中，然后重置临时数据
-                mAllViews.add(mLineViews.clone() as java.util.ArrayList<View>)
-                mLineViews.clear()
-                mLineViews.add(view)
-
-                realWidth = max(realWidth,tempWidth)
-                tempWidth = childWidth+hPadding
-
-                realHeight += tempHeight
-                mLineHeight.add(tempHeight)
-                tempHeight = childHeight+vPadding
-
-            }else{
-                mLineViews.add(view)
-                tempWidth +=(childWidth+hPadding)
-                //这一行的最高的view的高度为该行的高度
-                tempHeight = max(tempHeight,childHeight+vPadding)
-            }
-            //当遍历到最后一个view的时候，需要将它添加到集合中，因为添加集合的操作是在下一个遍历的时候进行的判断
-            //此时已经是最后一个view，不可能走下一个遍历，因此需要单独处理
-            if (index == childCount-1){
-                //重置每行的可用宽度
-                remainWidth = measureWidth-childWidth-hPadding
-
-
-                //换行啦,换行之后，需要保存上一行的view和高度到集合中，然后重置临时数据
-                mAllViews.add(mLineViews.clone() as java.util.ArrayList<View>)
-                mLineViews.clear()
-
-                realWidth = max(realWidth,tempWidth)
-
-                realHeight += tempHeight
-                mLineHeight.add(tempHeight)
-                tempHeight = 0
-            }
-        }
-
-        realWidth = if (widthMode == MeasureSpec.EXACTLY) measureWidth else realWidth
-        realHeight = if (heightMode == MeasureSpec.EXACTLY) measureHeight else realHeight
-        setMeasuredDimension(realWidth+paddingLeft+paddingRight,realHeight+paddingTop+paddingBottom)
-    }
+//    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+//
+//        mAllViews.clear()
+//        mLineViews.clear()
+//        mLineHeight.clear()
+//
+//        val widthMode = MeasureSpec.getMode(widthMeasureSpec)
+//        val heightMode = MeasureSpec.getMode(heightMeasureSpec)
+//        val measureWidth = MeasureSpec.getSize(widthMeasureSpec)-paddingLeft-paddingRight
+//        val measureHeight = MeasureSpec.getSize(heightMeasureSpec)-paddingTop-paddingBottom
+//
+//        //布局的真实尺寸
+//        var realWidth = 0
+//        var realHeight = 0
+//
+//        //每行的可用宽度，默认等于测量宽度
+//        var remainWidth = measureWidth
+//
+//        //已经使用的尺寸
+//        var tempWidth = 0
+//        var tempHeight = 0
+//
+//        forEachIndexed { index, view ->
+//            val childParams:MarginLayoutParams = view.layoutParams as MarginLayoutParams
+//            measureChildWithMargins(view,widthMeasureSpec,0,heightMeasureSpec,0)
+//            val childWidth = view.measuredWidth+childParams.leftMargin+childParams.rightMargin
+//            val childHeight = view.measuredHeight+childParams.topMargin+childParams.bottomMargin
+//
+//            remainWidth -= (childWidth+hPadding)
+//            //如果可用宽度<=0，说明这一行剩余空间不够放置此view，需要另起一行
+//            if (remainWidth<=0){
+//                //重置每行的可用宽度
+//                remainWidth = measureWidth-childWidth-hPadding
+//
+//                //换行啦,换行之后，需要保存上一行的view和高度到集合中，然后重置临时数据
+//                mAllViews.add(mLineViews.clone() as java.util.ArrayList<View>)
+//                mLineViews.clear()
+//                mLineViews.add(view)
+//
+//                realWidth = max(realWidth,tempWidth)
+//                tempWidth = childWidth+hPadding
+//
+//                realHeight += tempHeight
+//                mLineHeight.add(tempHeight)
+//                tempHeight = childHeight+vPadding
+//
+//            }else{
+//                mLineViews.add(view)
+//                tempWidth +=(childWidth+hPadding)
+//                //这一行的最高的view的高度为该行的高度
+//                tempHeight = max(tempHeight,childHeight+vPadding)
+//            }
+//            //当遍历到最后一个view的时候，需要将它添加到集合中，因为添加集合的操作是在下一个遍历的时候进行的判断
+//            //此时已经是最后一个view，不可能走下一个遍历，因此需要单独处理
+//            if (index == childCount-1){
+//                //重置每行的可用宽度
+//                remainWidth = measureWidth-childWidth-hPadding
+//
+//
+//                //换行啦,换行之后，需要保存上一行的view和高度到集合中，然后重置临时数据
+//                mAllViews.add(mLineViews.clone() as java.util.ArrayList<View>)
+//                mLineViews.clear()
+//
+//                realWidth = max(realWidth,tempWidth)
+//
+//                realHeight += tempHeight
+//                mLineHeight.add(tempHeight)
+//                tempHeight = 0
+//            }
+//        }
+//
+//        realWidth = if (widthMode == MeasureSpec.EXACTLY) measureWidth else realWidth
+//        realHeight = if (heightMode == MeasureSpec.EXACTLY) measureHeight else realHeight
+//        setMeasuredDimension(realWidth+paddingLeft+paddingRight,realHeight+paddingTop+paddingBottom)
+//    }
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
         var left = paddingLeft

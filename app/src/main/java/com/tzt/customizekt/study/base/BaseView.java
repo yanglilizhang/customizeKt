@@ -44,10 +44,10 @@ public abstract class BaseView extends View {
     // 标柱的高度
     private final float mCoordinateFlagHeight = 8f;
 
-    private boolean _isInit;
     protected float mWidth;
     protected float mHeight;
 
+    private boolean _isInit;
     private int mStatusBarHeight;
 
     public BaseView(Context context) {
@@ -75,13 +75,21 @@ public abstract class BaseView extends View {
         }
     }
 
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+
+        mWidth = getMeasuredWidth();
+        mHeight = getMeasuredHeight();
+    }
+
     protected void initCoordinate(Context context) {
         mCoordinateColor = Color.BLACK;
         mGridColor = Color.LTGRAY;
 
         mStatusBarHeight = getStatusBarHeight(context);
 
-        mTextSize = sp2px(context, 10);
+        mTextSize = spToPx(10);
 
         mCoordinatePaint = new Paint();
         mCoordinatePaint.setAntiAlias(true);
@@ -166,20 +174,26 @@ public abstract class BaseView extends View {
 
     }
 
-    protected int sp2px(Context context, float spValue) {
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+    /**
+     * 转换 sp 至 px
+     *
+     * @param spValue sp值
+     * @return px值
+     */
+    protected int spToPx(float spValue) {
+        final float fontScale = Resources.getSystem().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
     }
 
     /**
      * 转换 dp 至 px
      *
-     * @param dp dp像素
-     * @return
+     * @param dpValue dp值
+     * @return px值
      */
-    protected int dpToPx(float dp) {
+    protected int dpToPx(float dpValue) {
         DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-        return (int) (dp * metrics.density + 0.5f);
+        return (int) (dpValue * metrics.density + 0.5f);
     }
 
     protected int getStatusBarHeight(Context context) {
