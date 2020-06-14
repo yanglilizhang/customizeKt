@@ -1,4 +1,4 @@
-package com.tzt.customizekt.study;
+package com.tzt.customizekt.study.draw;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -18,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import com.tzt.customizekt.R;
+import com.tzt.customizekt.study.Utils;
 
 /***
  * 绘制圆形头像

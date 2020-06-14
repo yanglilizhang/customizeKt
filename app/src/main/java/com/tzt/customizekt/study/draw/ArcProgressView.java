@@ -121,7 +121,8 @@ public class ArcProgressView extends BaseView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         drawCoordinate(canvas);
-        canvas.translate(centerX, centerY);//画布已移动到view的中间,以后所有的操作都是在中心点(0,0)下
+        //画布已移动到view的中间(坐标轴中心),以后所有的操作都是在中心点(0,0)下
+        canvas.translate(centerX, centerY);
         paint.setColor(Color.RED);
         paint.setStrokeWidth(10);
         canvas.drawPoint(-100, 0, paint);//屏幕的左上角

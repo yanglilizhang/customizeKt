@@ -1,0 +1,5 @@
+
+
+clipRect()
+clipPath() 切出来的圆为什什么没有抗锯⻮齿效果?因为「==强⾏行行切边==」
+clipOutRect() / clipOutPath()

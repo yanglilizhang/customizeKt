@@ -253,4 +253,34 @@ class PintView : View {
     new PorterDuffXfermode(PorterDuff.Mode.SCREEN)    // 显示持有图像，重合的会变白
     };
      */
+/**
+    SRC类
+    优先显示源图像
+    SRC
+    SRC_OVER
+    SRC_IN
+    SRC_OUT
+    SRC_ATOP
+
+    DST类
+    优先显示目标图像
+    DST
+    DST_OVER
+    DST_IN
+    DST_OUT
+    DST_ATOP
+
+    其他类
+    其它的叠加效果
+    CLEAR
+    XOR
+    DARKEN
+    LIGHTEN
+    MULTIPLY
+    SCREEN
+    ADD
+    OVERLAY
+    */
+
+
 }

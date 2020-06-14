@@ -1,4 +1,4 @@
-package com.tzt.customizekt.study;
+package com.tzt.customizekt.study.draw.text;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -11,7 +11,11 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.tzt.customizekt.R;
-//文字多行绘制
+import com.tzt.customizekt.study.Utils;
+
+//文字换行 ImageTextView
+//纯文本文字换行可以使用 StaticLayout
+//文字+图片复杂内容用 breakText() 来计算
 public class ImageTextView extends View {
     private static final float IMAGE_WIDTH = Utils.dp2px(100);
     private static final float IMAGE_OFFSET = Utils.dp2px(80);

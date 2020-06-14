@@ -1,4 +1,4 @@
-package com.tzt.customizekt.study;
+package com.tzt.customizekt.study.draw.text;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -12,8 +12,14 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-/**文字绘制*/
-public class SportsView extends View {
+
+import com.tzt.customizekt.study.Utils;
+import com.tzt.customizekt.study.base.BaseView;
+
+/**
+ * 文字绘制
+ */
+public class SportsView2 extends BaseView {
     private static final float RING_WIDTH = Utils.dp2px(20);
     private static final float RADIUS = Utils.dp2px(150);
     private static final int CIRCLE_COLOR = Color.parseColor("#90A4AE");
@@ -23,13 +29,18 @@ public class SportsView extends View {
     Rect rect = new Rect();
     Paint.FontMetrics fontMetrics = new Paint.FontMetrics();
 
-    public SportsView(Context context, @Nullable AttributeSet attrs) {
+    public SportsView2(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    @Override
+    protected void init(Context context) {
+
     }
 
     {
         paint.setTextSize(Utils.dp2px(100));
-        paint.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "Quicksand-Regular.ttf"));
+//        paint.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "Quicksand-Regular.ttf"));
         paint.getFontMetrics(fontMetrics);//测量文字方法2
         paint.setTextAlign(Paint.Align.CENTER);
     }
@@ -38,7 +49,7 @@ public class SportsView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        drawCoordinate(canvas);
         // 绘制环
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(CIRCLE_COLOR);
@@ -48,7 +59,14 @@ public class SportsView extends View {
         // 绘制进度条
         paint.setColor(HIGHLIGHT_COLOR);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        canvas.drawArc(getWidth() / 2 - RADIUS, getHeight() / 2 - RADIUS, getWidth() / 2 + RADIUS, getHeight() / 2 + RADIUS, -90, 225, false, paint);
+        //绘制圆弧-先找个RectF
+        canvas.drawArc(getWidth() / 2 - RADIUS, getHeight() / 2 - RADIUS,
+                getWidth() / 2 + RADIUS, getHeight() / 2 + RADIUS,
+                -90, 225, false, paint);
+        paint.setStrokeWidth(dpToPx(5));
+        canvas.drawRect(getWidth() / 2 - RADIUS, getHeight() / 2 - RADIUS,
+                getWidth() / 2 + RADIUS, getHeight() / 2 + RADIUS, paint);
+        paint.setColor(Color.GREEN);
 
         // 绘制文字
         paint.setTextSize(Utils.dp2px(100));
@@ -66,6 +84,6 @@ public class SportsView extends View {
         paint.setTextAlign(Paint.Align.LEFT);
         paint.getTextBounds("aaaa", 0, "abab".length(), rect);
 //        canvas.drawText("aaa", 0, 200, paint);//左边会有一点空隙
-        canvas.drawText("aaaa", -rect.left, 200, paint);//左边会有一点空隙
+        canvas.drawText("aaaa", -rect.left, 200, paint);
     }
 }

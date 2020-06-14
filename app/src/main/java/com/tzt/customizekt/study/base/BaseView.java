@@ -71,7 +71,8 @@ public abstract class BaseView extends View {
             _isInit = true;
 
             mWidth = getMeasuredWidth();
-            mHeight = getMeasuredHeight() + mStatusBarHeight;
+//            mHeight = getMeasuredHeight() + mStatusBarHeight;
+            mHeight = getMeasuredHeight();
         }
     }
 

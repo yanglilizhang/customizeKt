@@ -1,4 +1,4 @@
-package com.tzt.customizekt.study;
+package com.tzt.customizekt.study.draw;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,6 +9,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.Nullable;
+
+import com.tzt.customizekt.study.Utils;
+
 //饼图
 public class PieChart extends View {
     private static final int RADIUS = (int) Utils.dp2px(150);

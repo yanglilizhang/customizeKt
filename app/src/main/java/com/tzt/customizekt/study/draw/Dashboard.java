@@ -1,8 +1,7 @@
-package com.tzt.customizekt.study;
+package com.tzt.customizekt.study.draw;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathDashPathEffect;
@@ -14,6 +13,11 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import com.tzt.customizekt.study.Utils;
+
+/**
+ * 仪表盘
+ */
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Dashboard extends View {
     private static final int angle = 120;//角度

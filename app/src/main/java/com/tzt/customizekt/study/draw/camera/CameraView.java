@@ -1,4 +1,4 @@
-package com.tzt.customizekt.study;
+package com.tzt.customizekt.study.draw.camera;
 
 import android.content.Context;
 import android.graphics.Camera;
@@ -9,6 +9,11 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import com.tzt.customizekt.study.Utils;
+
+/**
+ * 使⽤ Camera 做三维旋转 CameraView
+ */
 public class CameraView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     Camera camera = new Camera();

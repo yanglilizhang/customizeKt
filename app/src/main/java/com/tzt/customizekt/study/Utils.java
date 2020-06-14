@@ -19,6 +19,7 @@ public class Utils {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().getDisplayMetrics());
     }
 
+
     public static Bitmap getAvatar(Resources res, int width) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
@@ -29,10 +30,15 @@ public class Utils {
         return BitmapFactory.decodeResource(res, R.drawable.icon, options);
     }
 
+    //变换camera位置
     public static float getZForCamera() {
         return -6 * Resources.getSystem().getDisplayMetrics().density;
     }
 
+    //标准的位置
+    public static float getCameraZLocation(){
+        return -8 * Resources.getSystem().getDisplayMetrics().density;
+    }
 
     /**
      * 获得屏幕高度

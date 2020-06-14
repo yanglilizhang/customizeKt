@@ -15,7 +15,7 @@
     <!--        app:layout_constraintRight_toRightOf="parent"-->
     <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <com.tzt.customizekt.study.draw.HollowOutView
+    <com.tzt.customizekt.study.clockView.CustomizeView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintLeft_toLeftOf="parent"
