@@ -12,6 +12,7 @@ import kotlin.math.*
  * Created by jaynm
  * https://juejin.im/post/5ee405d7e51d45789129394c?utm_source=gold_browser_extension#heading-2
  * on 2020-05-26.
+ * https://github.com/jaynm888/CustomizeView
  */
 class CustomizeView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
