@@ -5,14 +5,21 @@
 4.拉取主repo源代码： git fetch upstream
 5.合并主repo代码到本地代码： git merge upstream/master
 https://github.com/Justson/Flying-Pigeon
+https://github.com/funnywolfdadada/HollowKit****************
 
 https://github.com/Chen-Al/CustomViews
 https://github.com/liys666666/LProgressView
 
-https://github.com/pengMaster/view_okui
+https://github.com/pengMaster/view_okui  ******
 
-https://github.com/onebee/Netease_UI
-https://github.com/yangkun19921001/CustomViewSample
+https://github.com/onebee/Netease_UI  ******
+https://github.com/yangkun19921001/CustomViewSample ********
+
+https://github.com/JeffrayZ/CustomViewDemo ***
+https://github.com/caobin821651400/Study
+https://github.com/zhijunhong/custom_view
+https://github.com/vampire184/ScrathView
+
 https://github.com/LuckyCode1992/ViewUtils
 https://github.com/xing16/ProgressAndroid
 https://github.com/zincPower/UI2018
@@ -21,13 +28,14 @@ https://github.com/afkT/DevUtils/tree/master/lib/Widget/DevWidget
 https://github.com/uni7corn/Widget
 https://github.com/GitHubZJY/ZJYWidget
 https://github.com/jaynm888/StockDemo
-
+https://github.com/rengwuxian/HenCoderPlus5
+https://github.com/caobin821651400/Xlibrary
 
 https://github.com/wsdydeni/CustomViewCollection
  * https://github.com/hanlonglinandroidstudys/DiyViewStudy
  * https://github.com/mudcastles/GXP-BaseEverything
  * https://github.com/jobscz/CustomViewSample
- * https://github.com/Bgtal/SnbView !!!!!!!!
+ *
  * https://github.com/Bgtal/SnbUtil
  * https://gitee.com/zhangshitou/CustomViewLearn
  https://github.com/zhangfengzhou/AndroidLearn
@@ -53,3 +61,26 @@ https://github.com/sucese/android-open-source-project-analysis
 https://github.com/18702953620/CUtils
 https://github.com/Hzy-Joel/HzyVU
 https://github.com/13572148105/project-base-lib/tree/master/globallib/src
+
+https://github.com/Ellen2018/AndroidAutoView
+
+https://github.com/yinshuai0324/MakeView 预约
+https://github.com/yinshuai0324/NetworkLibrary
+
+onestravel/OneBottomNavigationBar
+OneBottomNavigationBar 是自定义的一个实现App应用底部导航栏功能的View,
+可以实现底部 2-5 个导航菜单（一般不会有更多），可以实现某一个菜单凸起的效果，如，有5个菜单，可以选择让第三个菜单凸起（float…
+https://github.com/bigdongdong/ChatView
+https://github.com/zxyUncle/zxyAddressGaoDe
+https://github.com/lsmya/CustomView
+https://github.com/zhangyi007/GraphDemo
+https://github.com/18702953620/CUtils
+https://github.com/JArchie/CustomViewProject
+https://github.com/zane618/LoadView
+https://github.com/zhusgithub/CustomizeViewApplication
+https://github.com/Hzy-Joel/HzyVU
+https://github.com/SenhLinsh/LshBase
+https://github.com/DyhYunhao/KotlinDemo
+//////////////////////////////////////////
+https://github.com/Bgtal/SnbView !!!!!!!!
+https://github.com/yinshuai0324/ViewLibrary

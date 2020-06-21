@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".study.page.WaveViewActivity"></activity>
+        <activity android:name=".study.page.EnterDiyActivity"/>
+        <activity android:name=".study.page.WaveViewActivity" />
         <activity android:name=".study.page.MiSportsActivity" />
         <activity android:name=".study.page.PageActivity" />
         <activity
@@ -23,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".diy.text.DxTextViewTest"/>
     </application>
 
 </manifest>

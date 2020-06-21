@@ -89,13 +89,13 @@ class PintView : View {
                     //radius: 阴影的模糊范围
                     //dx dy: 阴影的偏移量
                     //shadowColor: 阴影的颜色
-                    //开启硬件加速 绘制文字
+                    //禁止硬件加速 绘制文字
                     setLayerType(LAYER_TYPE_SOFTWARE, null)
                     setShadowLayer(10f, 0f, 0f, Color.RED)
                     "注意: 在硬件加速开启的情况下, setShadowLayer() 只支持文字的绘制,文字之外的绘制必须关闭硬件加速才能正常绘制阴影。\n" +
                             "\t\t· 如果 shadowColor 是半透明的，阴影的透明度就使用 shadowColor 自己的透明度；" +
                             "而如果 shadowColor 是不透明的，阴影的透明度就使用 paint 的透明度。"
-                    clearShadowLayer() //如果不清楚画的圆是没有阴影的
+                    clearShadowLayer() //如果不清除画的圆是没有阴影的
                     setShadowLayer(15f, 2f, 2f, Color.GREEN)
                 }
                 canvas?.drawCircle(width / 2f, height / 2f, height / 4f, textPaint)
@@ -144,6 +144,7 @@ class PintView : View {
                     100f, 100f, 500f, 500f, parseColor("#E91E63"),
                     parseColor("#2196F3"), Shader.TileMode.CLAMP
                 )
+                //如果设置了Shader则原先给paint设置的setColor()失效
                 paint.apply {
                     color = Color.parseColor("#009688")
                     setARGB(10, 255, 33, 200)
@@ -253,7 +254,7 @@ class PintView : View {
     new PorterDuffXfermode(PorterDuff.Mode.SCREEN)    // 显示持有图像，重合的会变白
     };
      */
-/**
+    /**
     SRC类
     优先显示源图像
     SRC
@@ -280,7 +281,7 @@ class PintView : View {
     SCREEN
     ADD
     OVERLAY
-    */
+     */
 
 
 }
