@@ -2,14 +2,12 @@
 <resources>
 
     <declare-styleable name="MyView">
-
         <attr name="brand_text" format="string" />
         <attr name="brand_text_size" format="dimension" />
         <attr name="brand_text_color" format="color" />
         <attr name="hour_hand_color" format="color" />
         <attr name="minute_hand_color" format="color" />
         <attr name="second_hand_color" format="color" />
-
     </declare-styleable>
 
 
@@ -98,7 +96,7 @@
             <enum name="round" value="1" />
         </attr>
         <!-- 边框大小 -->
-        <attr name="borderWidth" format="dimension" />
+        <attr name="borderWidthTwo" format="dimension" />
         <!-- 边框颜色 -->
         <attr name="borderColor" format="color" />
         <!-- 圆角大小 -->
@@ -126,6 +124,78 @@
         <attr name="drawableBottomWidth" format="dimension" />
         <attr name="drawableBottomHeight" format="dimension" />
     </declare-styleable>
+
+    <!--彩色跑道 TextView-->
+    <declare-styleable name="ColorTrackTextView2">
+        <attr name="ctOriginTextColor" format="color" />
+        <attr name="ctChangeTextColor" format="color" />
+    </declare-styleable>
+   <!-- 开关 -->
+    <declare-styleable name="Switch">
+        <attr name="OnColor" format="color"/>
+        <attr name="OffColor" format="color"/>
+        <attr name="InsideOnColor" format="color"/>
+        <attr name="InsideOffColor" format="color"/>
+        <attr name="BackColor" format="color"/>
+        <attr name="SwitchPadding" format="dimension"/>
+        <attr name="InsidePadding" format="dimension"/>
+        <attr name="radius" format="dimension"/>
+        <attr name="switchOn" format="boolean"/>
+        <attr name="durations" format="integer"/>
+        <attr name="customTriger" format="reference"/>
+        <attr name="allowAnim" format="boolean"/>
+    </declare-styleable>
+<!--  RatingBar  -->
+    <declare-styleable name="RatingBar">
+        <attr name="starNormal" format="reference"/>
+        <attr name="starFocus" format="reference"/>
+        <attr name="gradeNumber" format="integer"/>
+        <attr name="starHorizontalPadding" format="dimension"/>
+        <attr name="starVerticalPadding" format="dimension"/>
+    </declare-styleable>
+<!--CusTextView-->
+    <declare-styleable name="CusTextView">
+
+        <attr name="customText" format="string" />
+        <attr name="customTextSize" format="dimension" />
+        <attr name="customTextColor" format="reference|color" />
+
+        <attr name="customInputType">
+            <enum name="number" value="1" />
+            <enum name="password" value="2" />
+            <enum name="text" value="3" />
+        </attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="QQStepView">
+        <attr name="outerColor" format="reference|color" />
+        <attr name="innerColor" format="reference|color" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="stepTextSize" format="dimension" />
+        <attr name="stepTextColor" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorTrackTextView3">
+        <attr name="originColor" format="color" />
+        <attr name="changeColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressView">
+        <attr name="circleProgressOuterColor" format="reference|color" />
+        <attr name="circleProgressInnerColor" format="reference|color" />
+        <attr name="circleProgressBorderWidth" format="dimension" />
+        <attr name="progressPercentColor" format="reference|color" />
+        <attr name="progressTextSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="LetterSideBar">
+        <attr name="textSize" format="dimension"/>
+        <attr name="textOriginColor" format="color"/>
+        <attr name="textChangeColor" format="color"/>
+    </declare-styleable>
+
+
     <declare-styleable name="DrawableTextView2">
         <attr name="drawable_src" format="reference" />
         <attr name="drawable_height" format="dimension" />
@@ -137,4 +207,9 @@
             <enum name="bottom" value="4" />
         </attr>
     </declare-styleable>
+
+
+<!--    /////////////////////////////////-->
+
+
 </resources>

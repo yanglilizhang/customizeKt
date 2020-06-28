@@ -1,13 +1,8 @@
 package com.tzt.customizekt.study.page
 
-import android.animation.ObjectAnimator
-import android.animation.PropertyValuesHolder
 import android.animation.TypeEvaluator
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.graphics.Point
-import android.util.Property
-import android.widget.TextView
+import android.widget.Toast
 import com.tzt.common.basedepency.base.BaseActivity
 import com.tzt.common.basedepency.widget.ToobarParams
 import com.tzt.customizekt.R
@@ -32,6 +27,17 @@ class PageActivity : BaseActivity() {
     override fun initData() {
         super.initData()
 //        startActivity(Intent(this, MiSportsActivity::class.java))
+
+        switchMy.setOnStateChangeListener { _, switchOn ->
+            run {
+                val result: String = if (switchOn) {
+                    "打开"
+                } else {
+                    "关闭"
+                }
+                Toast.makeText(this@PageActivity, result, Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     internal class PointEvaluator1 :

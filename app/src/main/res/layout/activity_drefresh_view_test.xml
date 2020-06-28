@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tzt.customizekt.diy.view.DRefreshLayout.DRefreshViewTest">
+
+    <com.tzt.customizekt.diy.view.DRefreshLayout.DRefreshLayout
+        android:id="@+id/drefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.tzt.customizekt.diy.view.DRefreshLayout.header.NormalHeaderView
+            android:id="@+id/header1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent">
+
+        </com.tzt.customizekt.diy.view.DRefreshLayout.header.NormalHeaderView>
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下拉刷新" />
+
+            <Button
+                android:id="@+id/btn_newpage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下拉显示新界面" />
+
+            <Button
+                android:id="@+id/btn_loadmore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="上拉加载更多" />
+
+        </LinearLayout>
+
+        <com.tzt.customizekt.diy.view.DRefreshLayout.footer.NormalFooterView
+            android:id="@+id/footer1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_blue_dark" />
+    </com.tzt.customizekt.diy.view.DRefreshLayout.DRefreshLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

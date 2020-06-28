@@ -1,6 +1,8 @@
 package com.tzt.customizekt.study.utils
 
 import android.content.Context
+import android.util.TypedValue
+import android.view.View
 
 class DisplayUtils {
 
@@ -25,5 +27,20 @@ class DisplayUtils {
             return (dipValue * scale + 0.5f).toInt()
         }
 
+        fun sp2px(view: View, sp: Float): Int {
+            return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
+                sp, view.resources.displayMetrics).toInt()
+        }
+
     }
 }
+
+
+//object Utils {
+//
+//    @JvmStatic
+//    fun sp2px(view: View,sp: Float): Int {
+//        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
+//            sp, view.resources.displayMetrics).toInt()
+//    }
+//}

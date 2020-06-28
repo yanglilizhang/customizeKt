@@ -69,7 +69,7 @@ public class LoadingView extends BaseView {
     @Override
     protected void onDraw(Canvas canvas) {
         drawCoordinate(canvas);
-
+        //translate(mWidth / 2, mHeight / 2)执行以后画布中心点（0，0）就移动到屏幕中心
         canvas.translate(mWidth / 2, mHeight / 2);
 
         // 需要重置，否则受上次影响，因为getSegment方法是添加而非替换

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3.波浪" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/ed_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:hint="输入进度 0~100"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:minWidth="100dp" />
+
+                <Button
+                    android:id="@+id/btn_change"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="改变电量" />
+            </LinearLayout>
+
+            <com.tzt.customizekt.diy.view.waveView.WaveJinMuView
+                android:id="@+id/waveJinmuView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="20dp" />
+
+            <com.tzt.customizekt.diy.view.waveView.WaveMoveShipView
+                android:id="@+id/waveView3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="5dp" />
+
+            <com.tzt.customizekt.diy.view.waveView.WaveView3
+                android:id="@+id/waveView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <com.tzt.customizekt.diy.view.waveView.WaveView4
+                android:id="@+id/waveView2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -15,12 +15,31 @@
     <!--        app:layout_constraintRight_toRightOf="parent"-->
     <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <com.tzt.customizekt.diy.widget.ClearEditText
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+    <com.tzt.customizekt.diy.widget.DropLoadView
+        android:id="@+id/waveMoveShipView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <com.tzt.customizekt.diy.view.RatingBar-->
+    <!--        android:id="@+id/waveMoveShipView"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="24dp"-->
+    <!--        app:gradeNumber="5"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:starFocus="@drawable/star_selected"-->
+    <!--        app:starHorizontalPadding="46dp"-->
+    <!--        app:starNormal="@drawable/star_normal"-->
+    <!--        app:starVerticalPadding="20dp" />-->
 
     <!--    <com.tzt.customizekt.study.draw.ArcProgressView-->
     <!--        android:layout_width="match_parent"-->
@@ -34,5 +53,46 @@
     <!--        app:layout_constraintLeft_toLeftOf="parent"-->
     <!--        app:layout_constraintRight_toRightOf="parent"-->
     <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/waveMoveShipView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.tzt.customizekt.diy.view.Switch
+            android:id="@+id/switchMy"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            app:BackColor="#7E7C7C"
+            app:InsideOffColor="#AA0000"
+            app:InsideOnColor="#FF00AA00"
+            app:InsidePadding="10dp"
+            app:OffColor="#FFAAAAAA"
+            app:OnColor="#0000AA"
+            app:SwitchPadding="5dp"
+            app:allowAnim="true"
+            app:duration="250"
+            app:radius="30dp" />
+
+        <com.tzt.customizekt.diy.view.Switch
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            app:BackColor="#7E7C7C"
+            app:InsideOffColor="#AA0000"
+            app:InsideOnColor="#FF00AA00"
+            app:InsidePadding="10dp"
+            app:OffColor="#FFAAAAAA"
+            app:OnColor="#0000AA"
+            app:SwitchPadding="5dp"
+            app:allowAnim="true"
+            app:customTriger="@drawable/arrow"
+            app:duration="250"
+            app:radius="30dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,7 +40,8 @@ public class DXTextView extends AppCompatTextView {
     }
 
     private void init() {
-        //tv画笔
+        //此处必须通过getPaint() 获取TextView的画笔，后面才能将shader设置到此画笔上，
+        // 自己新建的画笔对TextView的文字是无效的
         mPaint = getPaint();
 
         animator = ObjectAnimator.ofFloat(this, "moveXP", 0, 1);

@@ -25,6 +25,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".diy.text.DxTextViewTest"/>
+        <activity android:name=".diy.text.sample.ColorTrackViewTest"/>
+        <activity android:name=".diy.view.waveView.WaveTest" />
+        <activity android:name=".diy.view.dropdownView.DropDownTest" />
+        <activity android:name=".diy.view.refreshView.PullToRefreshTest" />
+        <activity android:name=".diy.view.DRefreshLayout.DRefreshViewTest" />
+        <activity android:name=".diy.gesture.InterceptEventTest" />
+        <activity android:name=".diy.view.linkedmoveView.LinkedMoViewTest" />
+        <activity android:name=".diy.view.transition.TransitionActivity2" />
+        <activity android:name=".diy.view.transition.TransitionActivity1" />
+        <activity android:name=".diy.view.transition.SetFactory2Test" />
+        <activity android:name=".diy.view.headscroll.WechatHeaderTest2" />
+        <activity android:name=".diy.view.headscroll.WechatHeaderTest" />
+        <activity android:name=".diy.view.letterSideBar.LetterSideBarActivity" />
     </application>
 
 </manifest>

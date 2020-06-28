@@ -20,6 +20,7 @@ import com.tzt.customizekt.R
  *
  *@author abc
  *@time 2019/9/5 14:36
+ * 其实就是改变设置setCompoundDrawables的值
  */
 class ClearEditText : AppCompatEditText, View.OnFocusChangeListener, TextWatcher {
     private val TAG by lazy { ClearEditText::class.java.simpleName }
@@ -52,6 +53,7 @@ class ClearEditText : AppCompatEditText, View.OnFocusChangeListener, TextWatcher
 
         }
 
+        //getIntrinsicWidth()得到的非图片固有属性，而是与设备相关的值。
         mClearDrawable?.let {
             it.setBounds(
                 0, 0, it.intrinsicWidth, it.intrinsicHeight
@@ -78,7 +80,7 @@ class ClearEditText : AppCompatEditText, View.OnFocusChangeListener, TextWatcher
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         if (event?.action == MotionEvent.ACTION_UP) {
             if (compoundDrawables[2] != null) {
-
+                //点击区域
                 val touchable = event.x > (width - totalPaddingRight)
                         && (event.x < ((width - paddingRight)))
 

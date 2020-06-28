@@ -95,6 +95,11 @@ public class CustomView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         return super.onTouchEvent(event);
         //在发生触屏动作事件时调用。
+//        ScrollTo是到那个位置，ScrollBy是经过这段位置
+//        float y = event.getY();//相对于父
+//        float y = event.getRawY()//相对于屏幕
+//        getScrollX()   滑动   正值<--------->负值
+//        getScrollY()   上滑正值  下滑负值
     }
 
     @Override

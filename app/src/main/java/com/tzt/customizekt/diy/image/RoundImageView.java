@@ -92,7 +92,7 @@ public class RoundImageView extends androidx.appcompat.widget.AppCompatImageView
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RoundImageView, defStyle, 0);
         mImageType = typedArray.getInt(R.styleable.RoundImageView_imageType, TYPE_CIRCLE);
         mRoundRadius = typedArray.getDimensionPixelSize(R.styleable.RoundImageView_roundRadius, dp2px(DEFAULT_ROUND_RADIUS));
-        mBorderWidth = typedArray.getDimensionPixelSize(R.styleable.RoundImageView_borderWidth, dp2px(DEFAULT_BORDER_WIDTH));
+        mBorderWidth = typedArray.getDimensionPixelSize(R.styleable.RoundImageView_borderWidthTwo, dp2px(DEFAULT_BORDER_WIDTH));
         mBorderColor = typedArray.getColor(R.styleable.RoundImageView_borderColor, DEFAULT_BORDER_COLOR);
         mCoverColor = typedArray.getColor(R.styleable.RoundImageView_coverColor, DEFAULT_COVER_COLOR);
         mIsPressed = typedArray.getBoolean(R.styleable.RoundImageView_isPressed, DEFAULT_IS_PRESSED);

@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -19,6 +20,15 @@ public class Utils {
 //        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().getDisplayMetrics());
 //    }
 
+    public static float sp2px(Float sp) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
+                sp, Resources.getSystem().getDisplayMetrics());
+    }
+
+    public static float sp2px(int sp) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
+                sp, Resources.getSystem().getDisplayMetrics());
+    }
 
     public static Bitmap getAvatar(Resources res, int width) {
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -36,7 +46,7 @@ public class Utils {
     }
 
     //标准的位置
-    public static float getCameraZLocation(){
+    public static float getCameraZLocation() {
         return -8 * Resources.getSystem().getDisplayMetrics().density;
     }
 

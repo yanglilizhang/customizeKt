@@ -27,6 +27,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp" />
 
+            <com.tzt.customizekt.diy.view.searchView.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="24dp"
+                android:background="@color/green"/>
+
             <Button
                 android:id="@+id/btEnter"
                 android:layout_width="match_parent"
