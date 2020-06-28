@@ -14,7 +14,7 @@
 
 
     <declare-styleable name="ToggleButtonPlusMax">
-        <attr name="toggle"  format="string" />
+        <attr name="toggle" format="string" />
     </declare-styleable>
 
     <declare-styleable name="ArcProgressView">
@@ -28,5 +28,10 @@
         <attr name="arcTitleNumber" format="integer" />
     </declare-styleable>
 
-
+    <declare-styleable name="UnderLineTextview">
+        <attr name="line_height" format="dimension" />
+        <attr name="line_color" format="color|reference" />
+        <attr name="is_line_weight" format="boolean" />
+        <attr name="line_margin_top" format="dimension" />
+    </declare-styleable>
 </resources>
