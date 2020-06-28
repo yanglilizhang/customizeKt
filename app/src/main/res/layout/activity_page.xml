@@ -15,9 +15,9 @@
     <!--        app:layout_constraintRight_toRightOf="parent"-->
     <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <com.tzt.customizekt.diy.shaderLayer.ShadowView4
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <com.tzt.customizekt.diy.widget.ClearEditText
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

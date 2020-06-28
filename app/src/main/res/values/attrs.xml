@@ -34,4 +34,107 @@
         <attr name="is_line_weight" format="boolean" />
         <attr name="line_margin_top" format="dimension" />
     </declare-styleable>
+
+    <!-- 仪表盘自定义属性 -->
+    <declare-styleable name="ScienceBoardView">
+        <!--刻度 字体颜色-->
+        <attr name="sbDialColor" format="color" />
+        <!--刻度 字体大小-->
+        <attr name="sbDialTextSize" format="dimension" />
+        <!--边框圆弧宽度-->
+        <attr name="sbBorderWidth" format="dimension" />
+        <!--仪表盘半径-->
+        <attr name="sbRadius" format="dimension" />
+        <!--中心数值 字体大小-->
+        <attr name="sbValueTextSize" format="dimension" />
+        <!--中心单位 字体大小-->
+        <attr name="sbUnitTextSize" format="dimension" />
+        <!--中心数值 字体颜色-->
+        <attr name="sbValueTextColor" format="color" />
+        <!--单位 名称-->
+        <attr name="sbUnitName" format="string" />
+        <!--数值改变 动画时长-->
+        <attr name="sbAnimDuration" format="integer" />
+    </declare-styleable>
+
+    <!--  角标 -->
+    <declare-styleable name="CornerMarkView">
+        <attr name="cornerText" format="string" />
+        <attr name="cornerTextSize" format="dimension" />
+        <attr name="cornerTextColor" format="color" />
+        <attr name="cornerBgColor" format="color" />
+        <attr name="cornerBgWidth" format="dimension" />
+        <attr name="cornerTriangle" format="dimension" />
+        <attr name="cornerMode" format="enum">
+            <enum name="top_left" value="0" />
+            <enum name="top_right" value="1" />
+            <enum name="bottom_left" value="2" />
+            <enum name="bottom_right" value="3" />
+            <enum name="top_left_triangle" value="4" />
+            <enum name="top_right_triangle" value="5" />
+            <enum name="bottom_left_triangle" value="6" />
+            <enum name="bottom_right_triangle" value="7" />
+        </attr>
+    </declare-styleable>
+
+    <!--分贝仪仪表盘-->
+    <declare-styleable name="DecibelBoardView">
+        <attr name="colorRoundRadius" format="dimension" />
+        <attr name="currentLineRoundLength" format="dimension" />
+        <attr name="currentValueTextSize" format="dimension" />
+        <attr name="lineRoundLength" format="dimension" />
+        <attr name="lineRoundStart" format="dimension" />
+        <attr name="outsideRoundRadius" format="dimension" />
+        <attr name="startAngle" format="float" />
+        <attr name="lineRoundRadiusBgColor" format="color" />
+        <attr name="lineRoundRadiusColor" format="color" />
+    </declare-styleable>
+
+    <!--圆形/圆角矩形ImageView-->
+    <declare-styleable name="RoundImageView">
+        <!-- 显示类型 -->
+        <attr name="imageType" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+        </attr>
+        <!-- 边框大小 -->
+        <attr name="borderWidth" format="dimension" />
+        <!-- 边框颜色 -->
+        <attr name="borderColor" format="color" />
+        <!-- 圆角大小 -->
+        <attr name="roundRadius" format="dimension" />
+        <!-- 是否可被按下 -->
+        <attr name="isPressed" format="boolean" />
+        <!-- 按下状态蒙层颜色 -->
+        <attr name="coverColor" format="color" />
+    </declare-styleable>
+
+    <!--可以控制 drawable 大小的 TextView-->
+    <declare-styleable name="DrawableTextView">
+        <attr name="drawableWidth" format="dimension" />
+        <attr name="drawableHeight" format="dimension" />
+
+        <attr name="drawableLeftWidth" format="dimension" />
+        <attr name="drawableLeftHeight" format="dimension" />
+
+        <attr name="drawableRightWidth" format="dimension" />
+        <attr name="drawableRightHeight" format="dimension" />
+
+        <attr name="drawableTopWidth" format="dimension" />
+        <attr name="drawableTopHeight" format="dimension" />
+
+        <attr name="drawableBottomWidth" format="dimension" />
+        <attr name="drawableBottomHeight" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="DrawableTextView2">
+        <attr name="drawable_src" format="reference" />
+        <attr name="drawable_height" format="dimension" />
+        <attr name="drawable_width" format="dimension" />
+        <attr name="drawable_location">
+            <enum name="left" value="1" />
+            <enum name="top" value="2" />
+            <enum name="right" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+    </declare-styleable>
 </resources>
