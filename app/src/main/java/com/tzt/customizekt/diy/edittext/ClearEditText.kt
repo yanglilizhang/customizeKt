@@ -47,8 +47,7 @@ class ClearEditText : AppCompatEditText, View.OnFocusChangeListener, TextWatcher
         if (mClearDrawable == null) {
             // throw new
             // NullPointerException("You can add drawableRight attribute in XML");
-//            mClearDrawable = ContextCompat.getDrawable(context, R.drawable.ic_input_delete)
-            mClearDrawable = ContextCompat.getDrawable(context, R.drawable.arrow)
+            mClearDrawable = ContextCompat.getDrawable(context, R.drawable.ic_input_delete)
             //			mClearDrawable = getResources().getDrawable(R.drawable.id_del_edit_text);
 
         }
