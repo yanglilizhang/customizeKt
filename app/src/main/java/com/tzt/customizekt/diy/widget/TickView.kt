@@ -21,6 +21,7 @@ import com.tzt.customizekt.R
 class TickView : View, View.OnTouchListener {
 
     private val DEFAULT_SIZE = 80f
+
     //未选中状态
     private var mUnCheckColor = Color.parseColor("#E4E4E4")
     private var mCircleStrokenWidth = TypedValue.applyDimension(
@@ -59,6 +60,7 @@ class TickView : View, View.OnTouchListener {
     private var mCheckMarkPath: Path? = null
     private var mCheckMarkPathMeasure: PathMeasure? = null
 
+    //扫过的角度
     private var mCircleStrokenSweepAngle = 0f
     private val mCircleStrokenAnimal by lazy {
         ValueAnimator.ofFloat(0f, 1f).apply {
@@ -69,6 +71,7 @@ class TickView : View, View.OnTouchListener {
             }
         }
     }
+
     //缩小的圆
     private var mWhiteCircleRadius = mRadius
     private val mScaleWhiteAnimal by lazy {
@@ -223,12 +226,16 @@ class TickView : View, View.OnTouchListener {
     private fun drawDefauleView(canvas: Canvas) {
         with(mUnCheckPaint) {
             style = Paint.Style.STROKE
-            color = mUnCheckColor
+//            color = mUnCheckColor
+            color = Color.BLACK
             strokeWidth = mCircleStrokenWidth
         }
         mRect?.let {
-            canvas.drawArc(it, 90f, 360f, false, mUnCheckPaint)
+            //360f 扫过的角度
+//            canvas.drawArc(it, 0f, 160f, true, mUnCheckPaint)
+            canvas.drawArc(it, 0f, 360f, false, mUnCheckPaint)
         }
+        mRect?.let { canvas.drawRect(it, mUnCheckPaint) }
 
         mUnCheckPaint.strokeWidth = mCheckMarkStrokenWidth
         mCheckMarkPath?.let {
@@ -245,6 +252,7 @@ class TickView : View, View.OnTouchListener {
             style = Paint.Style.STROKE
         }
         mRect?.let {
+            //mCircleStrokenSweepAngle = 360*0.5...
             canvas.drawArc(it, 90f, mCircleStrokenSweepAngle, false, mCheckPaint)
         }
     }
@@ -257,9 +265,11 @@ class TickView : View, View.OnTouchListener {
             strokeWidth = 0f
             style = Paint.Style.FILL
         }
+        //固定圆
         canvas.drawCircle(width / 2f, height / 2f, mRadius, mCheckPaint)
 
         mCheckPaint.color = Color.WHITE
+        //变化圆 mWhiteCircleRadius = mRadius*0.5...
         canvas.drawCircle(width / 2f, height / 2f, mWhiteCircleRadius, mCheckPaint)
 
 
@@ -275,6 +285,7 @@ class TickView : View, View.OnTouchListener {
             strokeWidth = 0f
             style = Paint.Style.FILL
         }
+        //放大圆
         canvas.drawCircle(width / 2f, height / 2f, mRadius + mCheckScale, mCheckPaint)
 
         with(mCheckPaint) {
@@ -284,7 +295,7 @@ class TickView : View, View.OnTouchListener {
         }
         mCheckMarkPathMeasure?.let {
             val path = Path()
-            it.getSegment(0F, mCheckMarkPercent * it.length, path, true)
+            it.getSegment(0F, it.length * mCheckMarkPercent, path, true)
             path.rLineTo(0f, 0f)
             canvas.drawPath(path, mCheckPaint)
         }
