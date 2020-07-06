@@ -165,5 +165,105 @@
 
     </declare-styleable>
 
+<!--    ///////////////////////////////////////////-->
+    <declare-styleable name="PSTextView">
 
+        <!-- 描边 宽度 0为填充-->
+        <attr name="ps_border_width" format="dimension" />
+        <!-- 描边 颜色-->
+        <attr name="ps_border_color" format="color" />
+        <!-- 填充 颜色-->
+        <attr name="ps_background_color" format="color" />
+        <!-- 圆角 -->
+        <attr name="ps_radius" format="dimension" />
+        <!-- 左上圆角-->
+        <attr name="ps_top_left_radius" format="dimension" />
+        <!-- 右上圆角-->
+        <attr name="ps_top_right_radius" format="dimension" />
+        <!-- 左下圆角-->
+        <attr name="ps_bottom_left_radius" format="dimension" />
+        <!-- 右下圆角-->
+        <attr name="ps_bottom_right_radius" format="dimension" />
+        <!-- focus 颜色-->
+        <attr name="ps_focus_background_color" format="color" />
+        <!-- disabled 颜色-->
+        <attr name="ps_disable_background_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="PSButton">
+
+        <!-- 描边 宽度 0为填充-->
+        <attr name="ps_btn_border_width" format="dimension" />
+        <!-- 描边 颜色-->
+        <attr name="ps_btn_border_color" format="color" />
+        <!-- 填充 颜色-->
+        <attr name="ps_btn_background_color" format="color" />
+        <!-- 圆角 -->
+        <attr name="ps_btn_radius" format="dimension" />
+        <!-- 左上圆角-->
+        <attr name="ps_btn_top_left_radius" format="dimension" />
+        <!-- 右上圆角-->
+        <attr name="ps_btn_top_right_radius" format="dimension" />
+        <!-- 左下圆角-->
+        <attr name="ps_btn_bottom_left_radius" format="dimension" />
+        <!-- 右下圆角-->
+        <attr name="ps_btn_bottom_right_radius" format="dimension" />
+        <!-- focus 颜色-->
+        <attr name="ps_btn_focus_background_color" format="color" />
+        <!-- disabled 颜色-->
+        <attr name="ps_btn_disable_background_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TitleView">
+        <!-- 标题-->
+        <attr name="ps_title" format="string" />
+        <!-- 背景颜色-->
+        <attr name="ps_title_background_color" format="color" />
+        <!-- 右边文字-->
+        <attr name="ps_right_text" format="string" />
+        <!-- 右边按钮-->
+        <attr name="ps_right_res" format="reference" />
+        <!-- 返回键-->
+        <attr name="ps_back_res" format="reference" />
+        <!-- 右边文字颜色-->
+        <attr name="ps_right_text_color" format="color" />
+        <!-- 标题文字颜色-->
+        <attr name="ps_title_text_color" format="color" />
+        <!-- 标题文字大小-->
+        <attr name="ps_title_text_size" format="dimension" />
+        <!-- 右边文字大小-->
+        <attr name="ps_right_text_size" format="dimension" />
+        <!-- 是否需要返回键-->
+        <attr name="ps_need_back" format="boolean" />
+        <!-- 是否需要下间隔线-->
+        <attr name="ps_need_line" format="boolean" />
+        <!-- 间隔线颜色-->
+        <attr name="ps_line_color" format="color" />
+        <!-- 间隔线高度-->
+        <attr name="ps_line_height" format="dimension" />
+
+    </declare-styleable>
+
+    <!-- ScaleView -->
+    <declare-styleable name="ScaleView">
+        <!-- 刻度颜色-->
+        <attr name="h_lineColor" format="color" />
+        <!-- 背景颜色-->
+        <attr name="h_backgroundColor" format="color" />
+        <!-- 数据颜色-->
+        <attr name="h_dataColor" format="color" />
+        <!-- 刻度线宽度-->
+        <attr name="h_lineWidth" format="dimension" />
+        <!-- lineHeight-->
+        <attr name="h_lineHeight" format="dimension" />
+        <!-- 分隔-->
+        <attr name="h_lineSpace" format="integer" />
+        <!-- 是否需要刻度-->
+        <attr name="h_needLine" format="boolean" />
+        <!-- 是否需要文字-->
+        <attr name="h_needText" format="boolean" />
+        <!-- 文字大小-->
+        <attr name="h_textSize" format="dimension" />
+        <!-- 左右边距-->
+        <attr name="h_margin" format="dimension" />
+    </declare-styleable>
 </resources>

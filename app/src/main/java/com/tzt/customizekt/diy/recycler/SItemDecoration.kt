@@ -1,4 +1,4 @@
-package com.tzt.customizekt.diy.widget
+package com.tzt.customizekt.diy.recycler
 
 import android.content.Context
 import android.graphics.Canvas

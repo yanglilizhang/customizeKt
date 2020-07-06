@@ -1,4 +1,4 @@
-package com.tzt.customizekt.diy.widget;
+package com.tzt.customizekt.diy.recycler;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView.ItemDecoration;
  * will only draw dividers that are internal to the grid, meaning it will not draw lines for the
  * outermost left, top, right, or bottom edges.
  */
-public class GridDividerDecoration extends RecyclerView.ItemDecoration {
+public class GridDividerDecoration extends ItemDecoration {
 
   private final int spanCount;
   private final Paint dividerPaint;

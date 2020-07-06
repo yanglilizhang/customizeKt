@@ -111,12 +111,14 @@ class TickView : View, View.OnTouchListener {
 
     private val mAnimalSet by lazy {
         AnimatorSet().apply {
+            //扫过的角度:mCircleStrokenAnimal  缩小的圆:mScaleWhiteAnimal
             play(mCircleStrokenAnimal).before(mScaleWhiteAnimal)
         }
     }
 
     private val mCheckMarkAnimalSet by lazy {
         AnimatorSet().apply {
+            //打钩动画mCheckMarkAnimal
             play(mCheckMarkAnimal).with(mCheckScaleAnimal)
         }
     }
