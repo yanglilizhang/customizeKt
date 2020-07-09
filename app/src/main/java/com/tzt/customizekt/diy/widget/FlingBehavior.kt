@@ -11,14 +11,19 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 /**
- *
+ * https://github.com/gm365066360/FlingBehavior
  *@author abc
  *@time 2019/10/21 15:56
  */
 class FlingBehavior : AppBarLayout.Behavior {
     constructor()
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
+//    ITAnt/ZhuLing
+//    app/src/main/java/com/itant/zhuling/widget/behavior/FlingBehavior.java
 
+    //https://github.com/nicarayz/psnd-app
+    //https://github.com/nicarayz/psnd-app/blob/2dcae32bb215c1c16e3e1651d0b2c3520120e508/app/src/main/java/kh/com/psnd/ui/activity/FlingBehavior.java
+    //https://github.com/Stuti82/cloudAws/tree/master/NewPipe
     private val TAG = FlingBehavior::class.java.name
     private val TOP_CHILD_FLING_THRESHOLD = 1
     private val OPTIMAL_FLING_VELOCITY = 3500f

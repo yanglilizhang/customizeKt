@@ -27,6 +27,7 @@ import static com.tzt.customizekt.study.Utils.dp2px;
  * @ description: 圆形/圆角矩形ImageView
  * @ author: vchao  blog: https://vchao.blog.csdn.net/
  * https://github.com/thomhurst/RoundImageView
+ * https://github.com/hdodenhof/CircleImageView
  */
 public class RoundImageView extends androidx.appcompat.widget.AppCompatImageView {
 

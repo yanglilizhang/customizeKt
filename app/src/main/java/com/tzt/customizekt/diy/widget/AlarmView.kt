@@ -9,7 +9,7 @@ import android.util.Log
 import androidx.appcompat.widget.AppCompatSeekBar
 import android.view.MotionEvent
 
-
+//https://github.com/yanjuntext/MyView
 /**移动侦测*/
 class AlarmView : AppCompatSeekBar {
 
